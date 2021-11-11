@@ -1,0 +1,22 @@
+version: "3.5"
+
+services:
+  lumen:
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/vendor/
+    build: .
+    command: php -S lumen:8000 -t public
+    links:
+      - "database:database"
+    restart: always
+  database:
+    ports:
+      - "3023:5432"
+    image: "postgres"
+    env_file:
+      - database.env # configure postgres
+    volumes:
+      - /var/lib/postgresql/data/ # persist data even if container shuts down

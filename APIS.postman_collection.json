@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "71d876f8-b643-4497-98b5-3003cccb020c",
+		"name": "APIS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Booking Store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"flat_number\" : \"500121\",\n    \"booking_start\": \"2022/11/11 01:12\",\n    \"booking_end\" : \"2022/11/11 08:12\"\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/booking/store",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"booking",
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking Check Availability",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/booking/check-availability",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"booking",
+						"check-availability"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Booking Confirm Payment",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/booking/5/pay",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"booking",
+						"5",
+						"pay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculate-price",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"booking_start\": \"2022/11/11 01:12\",\n    \"booking_end\" : \"2022/11/11 08:12\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/booking/calculate-price",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"booking",
+						"calculate-price"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
